@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lyly Cards</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #e8d5c3;
+            color: #5b4030;
+        }
+
+        header {
+            max-width: 1100px;
+            margin: 30px auto 0;
+            padding: 40px 30px;
+            background: #c9a98f;
+            border-radius: 30px 30px 0 0;
+            border: 2px solid #a9876d;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #5b4030;
+            font-size: 48px;
+            margin: 5px 0 15px;
+            font-family: Georgia, serif;
+        }
+
+        header p {
+            color: #6f5140;
+            font-size: 17px;
+            margin: 8px;
+        }
+
+        .pusheen {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            margin: 5px;
+            mix-blend-mode: multiply;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 35px;
+            background: #f7efe8;
+            border-left: 2px solid #d2b9a5;
+            border-right: 2px solid #d2b9a5;
+        }
+
+        h2 {
+            color: #684a37;
+            font-family: Georgia, serif;
+            font-size: 30px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .catalogo {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #e3cbb7;
+            color: #5b4030;
+            border: 1px solid #c3a38b;
+            border-radius: 22px;
+            text-align: center;
+            min-height: 300px;
+            box-shadow: 0 5px 15px rgba(80, 50, 35, 0.12);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(80, 50, 35, 0.18);
+        }
+
+        .card img {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            mix-blend-mode: multiply;
+        }
+
+        .card h3 {
+            color: #684a37;
+            font-family: Georgia, serif;
+            font-size: 20px;
+            min-height: 45px;
+        }
+
+        .card p {
+            color: #765b48;
+            min-height: 45px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .card strong {
+            display: block;
+            color: #593c2b;
+            font-size: 24px;
+            margin: 18px;
+        }
+
+        button {
+            border: none;
+            padding: 11px 30px;
+            border-radius: 25px;
+            background: #79563f;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #5f412f;
+            transform: scale(1.05);
+        }
+
+        .destaque {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-bottom: 50px;
+        }
+
+        .combo {
+            background: #d6bba4;
+            padding: 30px;
+            border-radius: 25px;
+            border: 1px solid #b9987e;
+            box-shadow: 0 5px 15px rgba(80, 50, 35, 0.08);
+        }
+
+        .combo h3 {
+            color: #684a37;
+            font-family: Georgia, serif;
+            font-size: 23px;
+            margin-top: 0;
+        }
+
+        .combo p {
+            color: #765b48;
+            line-height: 1.6;
+        }
+
+        .combo strong {
+            display: block;
+            font-size: 28px;
+            color: #593c2b;
+            margin: 20px 0;
+        }
+
+        .aviso {
+            text-align: center;
+            margin: 30px 0;
+            padding: 30px;
+            background: #c9a98f;
+            border: 1px solid #a9876d;
+            border-radius: 25px;
+            color: #593c2b;
+            line-height: 1.8;
+        }
+
+        footer {
+            max-width: 1100px;
+            margin: 0 auto 30px;
+            padding: 25px;
+            background: #b89579;
+            color: #4f3627;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+        }
+
+        @media (max-width: 800px) {
+
+            .catalogo {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .destaque {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            header {
+                margin-top: 10px;
+                padding: 35px 20px;
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .catalogo {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <!-- Mascote Pusheen -->
+        <img src="https://i.pinimg.com/736x/b5/b7/0e/b5b70e8e9d51c1e60857b32a3432d050.jpg"
+        class="pusheen"
+        alt="Pusheen">
+
+        <h1>☾ Lyly Cards ✦</h1>
+
+        <p>Tarot & Baralho Cigano</p>
+
+        <p>Descubra o que as cartas têm para revelar!</p>
+
+    </header>
+
+
+    <main>
+
+        <h2>✦ Consultas ✦</h2>
+
+        <div class="catalogo">
+
+            <div class="card">
+
+                <img src="https://i.pinimg.com/736x/59/9d/3e/599d3e06f5ea0aeeb368247e2939dff3.jpg"
+                alt="Pusheen">
+
+                <h3>1 Pergunta Sim ou Não</h3>
+
+                <p>Uma pergunta de resposta Sim ou Não.</p>
+
+                <strong>R$ 10,00</strong>
+
+                <button onclick="pedir('1 Pergunta Sim ou Não')">
+                    Pedir
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://i.pinimg.com/736x/14/fa/43/14fa43b8ea3ce5b5c9d7ee7f796c99e1.jpg"
+                alt="Pusheen">
+
+                <h3>1 Pergunta</h3>
+
+                <p>Uma pergunta para as cartas.</p>
+
+                <strong>R$ 10,00</strong>
+
+                <button onclick="pedir('1 Pergunta')">
+                    Pedir
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://i.pinimg.com/736x/14/9a/87/149a873fe688a0b01fb09297af14c860.jpg"
+                alt="Pusheen">
+
+                <h3>3 Perguntas</h3>
+
+                <p>Três perguntas para sua consulta.</p>
+
+                <strong>R$ 12,00</strong>
+
+                <button onclick="pedir('3 Perguntas')">
+                    Pedir
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://i.pinimg.com/736x/f0/e9/e7/f0e9e731ae44b9f934dab4627ecc7e8d.jpg"
+                alt="Pusheen">
+
+                <h3>10 Perguntas</h3>
+
+                <p>Uma consulta completa.</p>
+
+                <strong>R$ 25,00</strong>
+
+                <button onclick="pedir('10 Perguntas')">
+                    Pedir
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <h2>✦ Combos ✦</h2>
+
+        <div class="destaque">
+
+            <div class="combo">
+
+                <h3>5 Perguntas + 1 Método à Escolha</h3>
+
+                <p>
+                    Um combo completo para quem deseja
+                    uma consulta mais detalhada.
+                </p>
+
+                <strong>R$ 50,00</strong>
+
+                <button onclick="pedir('5 Perguntas + 1 Método à Escolha')">
+                    Pedir
+                </button>
+
+            </div>
+
+
+            <div class="combo">
+
+                <h3>10 Perguntas + 1 Método à Escolha</h3>
+
+                <p>
+                    Combo místico para uma experiência
+                    ainda mais completa.
+                </p>
+
+                <strong>R$ 70,00</strong>
+
+                <button onclick="pedir('10 Perguntas + 1 Método à Escolha')">
+                    Pedir
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <h2>✦ Métodos Especiais ✦</h2>
+
+        <div class="catalogo">
+
+            <div class="card">
+
+                <img src="https://i.pinimg.com/736x/a0/9a/03/a09a03e797940de3fab557fef988075b.jpg"
+                alt="Pusheen">
+
+                <h3>Templo de Afrodite</h3>
+
+                <p>Consulta voltada para questões amorosas.</p>
+
+                <strong>R$ 18,00</strong>
+
+                <button onclick="pedir('Templo de Afrodite')">
+                    Pedir
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://i.pinimg.com/736x/e5/65/ac/e565acfcb8b92877f08548d19d5d6a9f.jpg"
+                alt="Pusheen">
+
+                <h3>Templo do Diabo</h3>
+
+                <p>Uma leitura mais profunda e intensa.</p>
+
+                <strong>R$ 22,00</strong>
+
+                <button onclick="pedir('Templo do Diabo')">
+                    Pedir
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="https://i.pinimg.com/736x/81/86/65/81866589723a3ac3be902e264658a6ff.jpg"
+                alt="Pusheen">
+
+                <h3>Taça do Amor</h3>
+
+                <p>Leitura direcionada para o amor.</p>
+
+                <strong>R$ 16,00</strong>
+
+                <button onclick="pedir('Taça do Amor')">
+                    Pedir
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="aviso">
+
+            ✦ Para mais métodos, chamar no PV! ✦<br>
+
+            11 97380-1133 no WhatsApp<br>
+
+            @lylycards no Instagram
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        ☾ ✦ © 2026 Lyly Cards • Tarot & Baralho Cigano ✦ ☽
+
+    </footer>
+
+
+    <script>
+
+        function pedir(servico) {
+
+            alert("Você escolheu: " + servico);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
