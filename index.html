@@ -22,7 +22,7 @@
         }
 
         header {
-            max-width: 1100px;
+            max-width: 1300px;
             margin: 30px auto 0;
             padding: 40px 30px;
             background: #c9a98f;
@@ -53,7 +53,7 @@
         }
 
         main {
-            max-width: 1100px;
+            max-width: 1300px;
             margin: auto;
             padding: 35px;
             background: #f7efe8;
@@ -66,35 +66,50 @@
             font-family: Georgia, serif;
             font-size: 30px;
             margin: 25px 0;
-            text-align: left;
+            text-align: center;
         }
 
+        /* CATEGORIAS */
+
         .catalogo {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 25px;
+            flex-wrap: nowrap;
             margin-bottom: 50px;
         }
 
+        /* CARDS */
+
         .card {
-            padding: 18px;
+            width: 240px;
+            padding: 22px;
             background: #e3cbb7;
             color: #5b4030;
             border: 1px solid #c3a38b;
             border-radius: 22px;
             text-align: center;
-            min-height: 300px;
+            min-height: 330px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
             box-shadow: 0 5px 15px rgba(80, 50, 35, 0.12);
             transition: 0.3s;
         }
+
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(80, 50, 35, 0.18);
         }
 
         .card img {
-            width: 95px;
-            height: 95px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
             margin-bottom: 10px;
             mix-blend-mode: multiply;
@@ -104,6 +119,7 @@
             color: #684a37;
             font-family: Georgia, serif;
             font-size: 20px;
+            margin: 10px 0;
             min-height: 45px;
         }
 
@@ -112,14 +128,17 @@
             min-height: 45px;
             font-size: 14px;
             line-height: 1.5;
+            margin: 5px 0;
         }
 
         .card strong {
             display: block;
             color: #593c2b;
             font-size: 24px;
-            margin: 18px;
+            margin: 15px;
         }
+
+        /* BOTÕES */
 
         button {
             border: none;
@@ -137,14 +156,19 @@
             transform: scale(1.05);
         }
 
+        /* COMBOS */
+
         .destaque {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 25px;
             margin-bottom: 50px;
         }
 
         .combo {
+            width: 350px;
+            min-height: 250px;
             background: #d6bba4;
             padding: 30px;
             border-radius: 25px;
@@ -171,6 +195,8 @@
             margin: 20px 0;
         }
 
+        /* AVISO */
+
         .aviso {
             text-align: center;
             margin: 30px 0;
@@ -182,8 +208,10 @@
             line-height: 1.8;
         }
 
+        /* RODAPÉ */
+
         footer {
-            max-width: 1100px;
+            max-width: 1300px;
             margin: 0 auto 30px;
             padding: 25px;
             background: #b89579;
@@ -192,14 +220,41 @@
             border-radius: 0 0 30px 30px;
         }
 
+        /* TELAS MENORES */
+
+        @media (max-width: 1100px) {
+
+            main {
+                max-width: 1300px;
+            }
+
+            .catalogo {
+                gap: 20px;
+            }
+
+        }
+
+        @media (max-width: 1050px) {
+
+            .catalogo {
+                flex-wrap: wrap;
+            }
+
+        }
+
         @media (max-width: 800px) {
 
             .catalogo {
-                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .card {
+                width: 240px;
             }
 
             .destaque {
-                grid-template-columns: 1fr;
+                flex-wrap: wrap;
             }
 
         }
@@ -220,7 +275,21 @@
             }
 
             .catalogo {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 280px;
+            }
+
+            .destaque {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .combo {
+                width: 280px;
             }
 
         }
@@ -231,9 +300,13 @@
 
 <body>
 
+
+    <!-- CABEÇALHO -->
+
     <header>
 
         <!-- Mascote Pusheen -->
+
         <img src="https://i.pinimg.com/736x/b5/b7/0e/b5b70e8e9d51c1e60857b32a3432d050.jpg"
         class="pusheen"
         alt="Pusheen">
@@ -249,9 +322,13 @@
 
     <main>
 
+
+        <!-- CONSULTAS -->
+
         <h2>✦ Consultas ✦</h2>
 
         <div class="catalogo">
+
 
             <div class="card">
 
@@ -262,7 +339,7 @@
 
                 <p>Uma pergunta de resposta Sim ou Não.</p>
 
-                <strong>R$ 10,00</strong>
+                <strong>R$ 07,50</strong>
 
                 <button onclick="pedir('1 Pergunta Sim ou Não')">
                     Pedir
@@ -298,7 +375,7 @@
 
                 <p>Três perguntas para sua consulta.</p>
 
-                <strong>R$ 12,00</strong>
+                <strong>R$ 25,00</strong>
 
                 <button onclick="pedir('3 Perguntas')">
                     Pedir
@@ -316,7 +393,7 @@
 
                 <p>Uma consulta completa.</p>
 
-                <strong>R$ 25,00</strong>
+                <strong>R$ 60,00</strong>
 
                 <button onclick="pedir('10 Perguntas')">
                     Pedir
@@ -327,9 +404,12 @@
         </div>
 
 
+        <!-- COMBOS -->
+
         <h2>✦ Combos ✦</h2>
 
         <div class="destaque">
+
 
             <div class="combo">
 
@@ -366,12 +446,16 @@
 
             </div>
 
+
         </div>
 
+
+        <!-- MÉTODOS -->
 
         <h2>✦ Métodos Especiais ✦</h2>
 
         <div class="catalogo">
+
 
             <div class="card">
 
@@ -382,7 +466,7 @@
 
                 <p>Consulta voltada para questões amorosas.</p>
 
-                <strong>R$ 18,00</strong>
+                <strong>R$ 20,00</strong>
 
                 <button onclick="pedir('Templo de Afrodite')">
                     Pedir
@@ -400,7 +484,7 @@
 
                 <p>Uma leitura mais profunda e intensa.</p>
 
-                <strong>R$ 22,00</strong>
+                <strong>R$ 25,00</strong>
 
                 <button onclick="pedir('Templo do Diabo')">
                     Pedir
@@ -418,7 +502,7 @@
 
                 <p>Leitura direcionada para o amor.</p>
 
-                <strong>R$ 16,00</strong>
+                <strong>R$ 18,00</strong>
 
                 <button onclick="pedir('Taça do Amor')">
                     Pedir
@@ -426,21 +510,31 @@
 
             </div>
 
+
         </div>
 
 
+        <!-- CONTATO -->
+
         <div class="aviso">
 
-            ✦ Para mais métodos, chamar no PV! ✦<br>
+            ✦ Para mais métodos, chamar no PV! ✦
 
-            11 97380-1133 no WhatsApp<br>
+            <br>
+
+            11 97380-1133 no WhatsApp
+
+            <br>
 
             @lylycards no Instagram
 
         </div>
 
+
     </main>
 
+
+    <!-- RODAPÉ -->
 
     <footer>
 
@@ -449,15 +543,28 @@
     </footer>
 
 
+    <!-- FUNÇÃO DO WHATSAPP -->
+
     <script>
 
         function pedir(servico) {
 
-            alert("Você escolheu: " + servico);
+            var numero = "5511973801133";
+
+            var mensagem = "Olá! Gostaria de pedir o serviço: "
+            + servico + " ✨";
+
+            var link = "https://wa.me/"
+            + numero
+            + "?text="
+            + encodeURIComponent(mensagem);
+
+            window.open(link, "_blank");
 
         }
 
     </script>
+
 
 </body>
 
