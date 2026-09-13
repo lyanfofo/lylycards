@@ -14,117 +14,178 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #e8d5c3;
+            background: #eee4dc;
             color: #5b4030;
         }
 
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
-            max-width: 1300px;
-            margin: 30px auto 0;
-            padding: 45px 30px;
-            background: #c9a98f;
-            border-radius: 30px 30px 0 0;
-            border: 2px solid #a9876d;
+            max-width: 1250px;
+            margin: 35px auto 0;
+            padding: 55px 30px 60px;
+            background: #d8c1ad;
+            border-radius: 35px 35px 0 0;
+            border: 1px solid #b99c84;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(80, 50, 35, 0.12);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(80, 50, 35, 0.12);
+        }
+
+        header::before {
+            content: "✦";
+            position: absolute;
+            left: 45px;
+            top: 35px;
+            font-size: 28px;
+            color: #8b6952;
+        }
+
+        header::after {
+            content: "☾";
+            position: absolute;
+            right: 45px;
+            bottom: 35px;
+            font-size: 32px;
+            color: #8b6952;
+        }
+
+        .pusheen {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin: 5px;
+            mix-blend-mode: multiply;
+            filter: drop-shadow(0 8px 8px rgba(70, 45, 30, 0.15));
         }
 
         header h1 {
-            color: #5b4030;
-            font-size: 48px;
-            margin: 5px 0 15px;
+            color: #503729;
+            font-size: 55px;
+            margin: 10px 0 12px;
             font-family: Georgia, serif;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         header p {
             color: #6f5140;
             font-size: 17px;
-            margin: 8px;
+            margin: 9px;
+            letter-spacing: 0.5px;
         }
 
-        .pusheen {
-            width: 130px;
-            height: 130px;
-            object-fit: contain;
-            margin: 5px;
-            mix-blend-mode: multiply;
-            filter: drop-shadow(0 5px 5px rgba(80, 50, 35, 0.12));
-        }
+        /* =========================
+           CONTEÚDO
+        ========================= */
 
         main {
-            max-width: 1300px;
+            max-width: 1250px;
             margin: auto;
-            padding: 45px;
-            background: #f7efe8;
-            border-left: 2px solid #d2b9a5;
-            border-right: 2px solid #d2b9a5;
+            padding: 45px 50px 60px;
+            background: #faf6f2;
+            border-left: 1px solid #d5c0ae;
+            border-right: 1px solid #d5c0ae;
         }
 
         h2 {
-            color: #684a37;
+            color: #5b4030;
             font-family: Georgia, serif;
-            font-size: 30px;
-            margin: 35px 0;
+            font-size: 32px;
+            margin: 25px 0 35px;
             text-align: center;
             letter-spacing: 1px;
         }
 
-        /* CATEGORIAS */
+        h2::before {
+            content: "✦ ";
+            color: #9b7961;
+        }
+
+        h2::after {
+            content: " ✦";
+            color: #9b7961;
+        }
+
+        /* =========================
+           CARDS
+        ========================= */
 
         .catalogo {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: stretch;
-            gap: 25px;
+            gap: 28px;
             flex-wrap: nowrap;
-            margin-bottom: 60px;
+            margin-bottom: 65px;
         }
 
-        /* CARDS */
-
         .card {
-            width: 240px;
-            padding: 22px;
-            background: #e3cbb7;
+            width: 250px;
+            padding: 12px 12px 22px;
+            background: #ffffff;
             color: #5b4030;
-            border: 1px solid #c3a38b;
-            border-radius: 22px;
+            border: 1px solid #e2d5ca;
+            border-radius: 18px;
             text-align: center;
-            min-height: 330px;
-
+            min-height: 395px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
 
-            box-shadow: 0 8px 20px rgba(80, 50, 35, 0.10);
-            transition: 0.3s;
+            box-shadow:
+                0 4px 10px rgba(70, 45, 30, 0.08),
+                0 15px 30px rgba(70, 45, 30, 0.06);
+
+            transition: 0.35s ease;
+            position: relative;
+        }
+
+        .card:nth-child(2) {
+            transform: rotate(1deg);
+        }
+
+        .card:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+
+        .card:nth-child(4) {
+            transform: rotate(0.8deg);
         }
 
         .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 12px 25px rgba(80, 50, 35, 0.18);
+            transform: translateY(-10px) rotate(0deg);
+            box-shadow:
+                0 8px 18px rgba(70, 45, 30, 0.12),
+                0 20px 40px rgba(70, 45, 30, 0.10);
         }
 
         .card img {
-            width: 110px;
-            height: 110px;
-            object-fit: contain;
-            margin-bottom: 10px;
-            mix-blend-mode: multiply;
-            border-radius: 18px;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 13px;
+            display: block;
+            box-shadow: 0 4px 12px rgba(70, 45, 30, 0.12);
         }
 
         .card h3 {
-            color: #684a37;
+            color: #5b4030;
             font-family: Georgia, serif;
             font-size: 20px;
-            margin: 10px 0;
+            margin: 8px 0;
             min-height: 45px;
         }
 
@@ -133,63 +194,77 @@
             min-height: 45px;
             font-size: 14px;
             line-height: 1.5;
-            margin: 5px 0;
+            margin: 5px 10px;
         }
 
         .card strong {
             display: block;
-            color: #593c2b;
-            font-size: 24px;
-            margin: 15px;
+            color: #5b4030;
+            font-size: 23px;
+            margin: 12px;
         }
 
-        /* BOTÕES */
+        /* =========================
+           BOTÕES
+        ========================= */
 
         button {
             border: none;
-            padding: 11px 30px;
-            border-radius: 25px;
-            background: #79563f;
+            padding: 12px 32px;
+            border-radius: 30px;
+            background: #70513e;
             color: white;
             cursor: pointer;
             font-size: 15px;
             transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(80, 50, 35, 0.15);
+            box-shadow: 0 5px 12px rgba(70, 45, 30, 0.15);
         }
 
         button:hover {
-            background: #5f412f;
+            background: #4f382a;
             transform: scale(1.05);
         }
 
-        /* COMBOS */
+        /* =========================
+           COMBOS
+        ========================= */
 
         .destaque {
             display: flex;
             justify-content: center;
             align-items: stretch;
-            gap: 25px;
-            margin-bottom: 60px;
+            gap: 30px;
+            margin-bottom: 65px;
         }
 
         .combo {
-            width: 350px;
-            min-height: 250px;
-            background: #d6bba4;
-            padding: 30px;
+            width: 380px;
+            min-height: 275px;
+            background: #eadbd0;
+            padding: 32px;
             border-radius: 25px;
-            border: 1px solid #b9987e;
+            border: 1px solid #d2b9a5;
             box-shadow: 0 8px 20px rgba(80, 50, 35, 0.08);
             transition: 0.3s;
+            position: relative;
+        }
+
+        .combo::after {
+            content: "✦";
+            position: absolute;
+            right: 22px;
+            top: 18px;
+            color: #a17e65;
+            font-size: 20px;
         }
 
         .combo:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(80, 50, 35, 0.15);
+            transform: translateY(-7px);
+            box-shadow: 0 14px 30px rgba(80, 50, 35, 0.12);
         }
 
         .combo h3 {
-            color: #684a37;
+            color: #5b4030;
             font-family: Georgia, serif;
             font-size: 23px;
             margin-top: 0;
@@ -207,64 +282,75 @@
             margin: 20px 0;
         }
 
-        /* AVISO */
+        /* =========================
+           AVISO
+        ========================= */
 
         .aviso {
             text-align: center;
-            margin: 40px 0 20px;
-            padding: 30px;
-            background: #c9a98f;
-            border: 1px solid #a9876d;
-            border-radius: 25px;
+            margin: 35px 0;
+            padding: 35px;
+            background: #d8c1ad;
+            border: 1px solid #b99c84;
+            border-radius: 28px;
             color: #593c2b;
-            line-height: 1.8;
-            box-shadow: 0 6px 18px rgba(80, 50, 35, 0.08);
+            line-height: 1.9;
+            box-shadow: 0 8px 20px rgba(80, 50, 35, 0.08);
         }
 
-        /* RODAPÉ */
+        .aviso strong {
+            font-family: Georgia, serif;
+            font-size: 18px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            max-width: 1300px;
-            margin: 0 auto 30px;
-            padding: 25px;
-            background: #b89579;
+            max-width: 1250px;
+            margin: 0 auto 35px;
+            padding: 28px;
+            background: #b99c84;
             color: #4f3627;
             text-align: center;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 8px 20px rgba(80, 50, 35, 0.10);
+            border-radius: 0 0 35px 35px;
+            box-shadow: 0 12px 30px rgba(80, 50, 35, 0.10);
         }
 
-        /* TELAS MENORES */
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
 
         @media (max-width: 1100px) {
 
             main {
-                max-width: 1300px;
+                padding: 40px 25px;
             }
-
-            .catalogo {
-                gap: 20px;
-            }
-
-        }
-
-        @media (max-width: 1050px) {
 
             .catalogo {
                 flex-wrap: wrap;
+            }
+
+            .card {
+                width: 240px;
             }
 
         }
 
         @media (max-width: 800px) {
 
+            header {
+                margin-top: 15px;
+            }
+
+            header h1 {
+                font-size: 44px;
+            }
+
             .catalogo {
                 justify-content: center;
                 flex-wrap: wrap;
-            }
-
-            .card {
-                width: 240px;
             }
 
             .destaque {
@@ -276,16 +362,27 @@
         @media (max-width: 550px) {
 
             header {
-                margin-top: 10px;
-                padding: 35px 20px;
+                padding: 40px 20px 50px;
             }
 
             header h1 {
                 font-size: 36px;
             }
 
+            header::before {
+                left: 20px;
+            }
+
+            header::after {
+                right: 20px;
+            }
+
             main {
-                padding: 20px;
+                padding: 30px 15px;
+            }
+
+            h2 {
+                font-size: 27px;
             }
 
             .catalogo {
@@ -294,7 +391,12 @@
             }
 
             .card {
-                width: 280px;
+                width: 290px;
+                transform: none;
+            }
+
+            .card img {
+                height: 200px;
             }
 
             .destaque {
@@ -303,7 +405,7 @@
             }
 
             .combo {
-                width: 280px;
+                width: 290px;
             }
 
         }
@@ -314,16 +416,13 @@
 
 <body>
 
-
-    <!-- CABEÇALHO -->
-
     <header>
 
-        <!-- Mascote Pusheen -->
-
-        <img src="https://i.pinimg.com/736x/b5/b7/0e/b5b70e8e9d51c1e60857b32a3432d050.jpg"
-        class="pusheen"
-        alt="Pusheen">
+        <img
+            class="pusheen"
+            src="https://i.pinimg.com/736x/b5/b7/0e/b5b70e8e9d51c1e60857b32a3432d050.jpg"
+            alt="Pusheen"
+        >
 
         <h1>☾ Lyly Cards ✦</h1>
 
@@ -336,22 +435,22 @@
 
     <main>
 
-
-        <!-- CONSULTAS -->
-
-        <h2>✦ Consultas ✦</h2>
+        <h2>Consultas</h2>
 
         <div class="catalogo">
 
-
             <div class="card">
 
-                <img src="https://i.pinimg.com/736x/59/9d/3e/599d3e06f5ea0aeeb368247e2939dff3.jpg"
-                alt="Pusheen">
+                <img
+                    src="https://i.pinimg.com/736x/59/9d/3e/599d3e06f5ea0aeeb368247e2939dff3.jpg"
+                    alt="1 Pergunta Sim ou Não"
+                >
 
                 <h3>1 Pergunta Sim ou Não</h3>
 
-                <p>Uma pergunta de resposta Sim ou Não.</p>
+                <p>
+                    Uma pergunta de resposta Sim ou Não.
+                </p>
 
                 <strong>R$ 07,50</strong>
 
@@ -364,12 +463,16 @@
 
             <div class="card">
 
-                <img src="https://i.pinimg.com/736x/14/fa/43/14fa43b8ea3ce5b5c9d7ee7f796c99e1.jpg"
-                alt="Pusheen">
+                <img
+                    src="https://i.pinimg.com/736x/14/fa/43/14fa43b8ea3ce5b5c9d7ee7f796c99e1.jpg"
+                    alt="1 Pergunta"
+                >
 
                 <h3>1 Pergunta</h3>
 
-                <p>Uma pergunta para as cartas.</p>
+                <p>
+                    Uma pergunta para as cartas.
+                </p>
 
                 <strong>R$ 10,00</strong>
 
@@ -382,12 +485,16 @@
 
             <div class="card">
 
-                <img src="https://i.pinimg.com/736x/14/9a/87/149a873fe688a0b01fb09297af14c860.jpg"
-                alt="Pusheen">
+                <img
+                    src="https://i.pinimg.com/736x/14/9a/87/149a873fe688a0b01fb09297af14c860.jpg"
+                    alt="3 Perguntas"
+                >
 
                 <h3>3 Perguntas</h3>
 
-                <p>Três perguntas para sua consulta.</p>
+                <p>
+                    Três perguntas para sua consulta.
+                </p>
 
                 <strong>R$ 25,00</strong>
 
@@ -400,12 +507,16 @@
 
             <div class="card">
 
-                <img src="https://i.pinimg.com/736x/f0/e9/e7/f0e9e731ae44b9f934dab4627ecc7e8d.jpg"
-                alt="Pusheen">
+                <img
+                    src="https://i.pinimg.com/736x/f0/e9/e7/f0e9e731ae44b9f934dab4627ecc7e8d.jpg"
+                    alt="10 Perguntas"
+                >
 
                 <h3>10 Perguntas</h3>
 
-                <p>Uma consulta completa.</p>
+                <p>
+                    Uma consulta completa.
+                </p>
 
                 <strong>R$ 60,00</strong>
 
@@ -418,20 +529,18 @@
         </div>
 
 
-        <!-- COMBOS -->
-
-        <h2>✦ Combos ✦</h2>
+        <h2>Combos</h2>
 
         <div class="destaque">
 
-
             <div class="combo">
 
-                <h3>5 Perguntas + 1 Método à Escolha</h3>
+                <h3>
+                    5 Perguntas + 1 Método à Escolha
+                </h3>
 
                 <p>
-                    Um combo completo para quem deseja
-                    uma consulta mais detalhada.
+                    Um combo completo para quem deseja uma consulta mais detalhada.
                 </p>
 
                 <strong>R$ 50,00</strong>
@@ -445,11 +554,12 @@
 
             <div class="combo">
 
-                <h3>10 Perguntas + 1 Método à Escolha</h3>
+                <h3>
+                    10 Perguntas + 1 Método à Escolha
+                </h3>
 
                 <p>
-                    Combo místico para uma experiência
-                    ainda mais completa.
+                    Combo místico para uma experiência ainda mais completa.
                 </p>
 
                 <strong>R$ 70,00</strong>
@@ -460,25 +570,25 @@
 
             </div>
 
-
         </div>
 
 
-        <!-- MÉTODOS -->
-
-        <h2>✦ Métodos Especiais ✦</h2>
+        <h2>Métodos Especiais</h2>
 
         <div class="catalogo">
 
-
             <div class="card">
 
-                <img src="https://i.pinimg.com/736x/a0/9a/03/a09a03e797940de3fab557fef988075b.jpg"
-                alt="Pusheen">
+                <img
+                    src="https://i.pinimg.com/736x/a0/9a/03/a09a03e797940de3fab557fef988075b.jpg"
+                    alt="Templo de Afrodite"
+                >
 
                 <h3>Templo de Afrodite</h3>
 
-                <p>Consulta voltada para questões amorosas.</p>
+                <p>
+                    Consulta voltada para questões amorosas.
+                </p>
 
                 <strong>R$ 20,00</strong>
 
@@ -491,12 +601,16 @@
 
             <div class="card">
 
-                <img src="https://i.pinimg.com/736x/e5/65/ac/e565acfcb8b92877f08548d19d5d6a9f.jpg"
-                alt="Pusheen">
+                <img
+                    src="https://i.pinimg.com/736x/e5/65/ac/e565acfcb8b92877f08548d19d5d6a9f.jpg"
+                    alt="Templo do Diabo"
+                >
 
                 <h3>Templo do Diabo</h3>
 
-                <p>Uma leitura mais profunda e intensa.</p>
+                <p>
+                    Uma leitura mais profunda e intensa.
+                </p>
 
                 <strong>R$ 25,00</strong>
 
@@ -509,12 +623,16 @@
 
             <div class="card">
 
-                <img src="https://i.pinimg.com/736x/81/86/65/81866589723a3ac3be902e264658a6ff.jpg"
-                alt="Pusheen">
+                <img
+                    src="https://i.pinimg.com/736x/81/86/65/81866589723a3ac3be902e264658a6ff.jpg"
+                    alt="Taça do Amor"
+                >
 
                 <h3>Taça do Amor</h3>
 
-                <p>Leitura direcionada para o amor.</p>
+                <p>
+                    Leitura direcionada para o amor.
+                </p>
 
                 <strong>R$ 18,00</strong>
 
@@ -524,17 +642,14 @@
 
             </div>
 
-
         </div>
 
 
-        <!-- CONTATO -->
-
         <div class="aviso">
 
-            ✦ Para mais métodos, chamar no PV! ✦
+            <strong>✦ Para mais métodos, chamar no PV! ✦</strong>
 
-            <br>
+            <br><br>
 
             11 97380-1133 no WhatsApp
 
@@ -544,11 +659,8 @@
 
         </div>
 
-
     </main>
 
-
-    <!-- RODAPÉ -->
 
     <footer>
 
@@ -557,8 +669,6 @@
     </footer>
 
 
-    <!-- FUNÇÃO DO WHATSAPP -->
-
     <script>
 
         function pedir(servico) {
@@ -566,7 +676,8 @@
             var numero = "5511973801133";
 
             var mensagem = "Olá! Gostaria de pedir o serviço: "
-            + servico + " ✨";
+            + servico
+            + " ✨";
 
             var link = "https://wa.me/"
             + numero
@@ -578,7 +689,6 @@
         }
 
     </script>
-
 
 </body>
 
